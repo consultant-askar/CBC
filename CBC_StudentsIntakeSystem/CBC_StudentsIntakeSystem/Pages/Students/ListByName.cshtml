@@ -1,0 +1,32 @@
+﻿@page
+@model CBC_StudentsIntakeSystem.Pages.Students.ListByNameModel
+@{
+}
+
+<br>
+<h2>Students List Ordered By Name</h2>
+<a class="btn btn-primary btn-sm" href="/Students/Create">New Student</a>
+
+<table class="table w-auto">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.studentsList)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Students/Edit?id=@item.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Students/Delete?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
